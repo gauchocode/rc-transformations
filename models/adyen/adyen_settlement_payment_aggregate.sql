@@ -1,7 +1,7 @@
 {{ config(materialized="table") }}
 
 select 
-    "company_accout" as company_accout,
+    "company_account" as company_account,
     "merchant_account" as merchant_account,
     "country_code" as country_code,
     "store" as store,

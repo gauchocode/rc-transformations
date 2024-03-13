@@ -5,7 +5,7 @@ models:
   - name: adyen_settlement_payment_aggregate
     descipcion: "Transformacion en esta tabla"
     columns:
-      - name: company_accout
+      - name: company_account
       - name: merchant_account
       - name: country_code
       - name: store
