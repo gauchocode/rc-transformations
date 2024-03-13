@@ -1,0 +1,31 @@
+
+version: 2
+
+models:
+  - name: adyen_settlement_payment_aggregate
+    descipcion: "Transformacion en esta tabla"
+    columns:
+      - name: company_accout
+      - name: merchant_account
+      - name: country_code
+      - name: store
+      - name: terminal_id
+      - name: batch_number
+      - name: batch_closed_date
+      - name: batch_closed_date_trunc
+      - name: payment_method
+      - name: creation_date
+      - name: timezone
+      - name: journal_type
+      - name: gross_currency
+      - name: gross_debit_gc
+      - name: gross_credit_gc
+      - name: exchange_rate
+      - name: net_currency
+      - name: net_debit_nc
+      - name: net_credit_nc
+      - name: bank_card_commission_nc
+      - name: dcc_markup_nc
+      - name: num_txs
+
+
