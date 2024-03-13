@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: adyen_settlement_payment_aggregate
+  - name: adyen_settlement_payment_aggregate_final
     descipcion: "Transformacion en esta tabla"
     columns:
       - name: company_account
