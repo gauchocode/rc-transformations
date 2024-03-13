@@ -1,4 +1,4 @@
-{{ confif(materialized="table") }}
+{{ config(materialized="table") }}
 
 select 
     "company_accout" as company_accout,
