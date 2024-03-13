@@ -4,7 +4,7 @@ select
     "company_account" as company_account,
     "merchant_account" as merchant_account,
     "country_code" as country_code,
-    coalesce("store", 0) as store,
+    "store" as store,
     "terminal_id" as terminal_id,
     "batch_number" as batch_number,
     "batch_closed_date" as batch_closed_date,

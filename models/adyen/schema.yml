@@ -9,6 +9,7 @@ models:
       - name: merchant_account
       - name: country_code
       - name: store
+        fill_nulls_with: 0 # This fills null values with zero
       - name: terminal_id
       - name: batch_number
       - name: batch_closed_date
