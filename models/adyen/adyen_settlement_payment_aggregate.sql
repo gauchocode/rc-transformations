@@ -22,5 +22,5 @@ select
     "net_credit_nc" as net_credit_nc,
     "bank_card_commission_nc" as bank_card_commission_nc,
     "dcc_markup_nc" as dcc_markup_nc,
-    "num_txs" as "num_txs",
+    "num_txs" as "num_txs"
 from adyen_settlement_report_aggregate
