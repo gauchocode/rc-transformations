@@ -8,7 +8,6 @@ select
     "terminal_id" as terminal_id,
     "batch_number" as long,
     "batch_closed_date" as batch_closed_date,
-    "batch_closed_date_trunc" as batch_closed_date_trunc,
     "payment_method" as payment_method,
     "creation_date" as creation_date ,
     "timezone" as timezone,
