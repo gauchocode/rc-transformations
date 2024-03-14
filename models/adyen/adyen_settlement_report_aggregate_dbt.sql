@@ -1,10 +1,4 @@
-{{ 
-    config(materialized="table",
-    column_types={
-        "net_debit_nc": "double precision",
-        "net_credit_nc": "double precision"
-    }
-) }}
+{{ config(materialized="table") }}
 
 select 
     COALESCE("company_account", '') as company_account,
