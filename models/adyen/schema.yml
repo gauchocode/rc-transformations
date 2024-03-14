@@ -27,7 +27,7 @@ models:
       - name: bank_card_commission_nc
       - name: dcc_markup_nc
       - name: num_txs
-  - name: adyen_payments_accounting_report
+  - name: adyen_payments_accounting_report_dbt
     columns:
       - name: company_account
       - name: merchant_account
