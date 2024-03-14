@@ -3,7 +3,7 @@ version: 2
 
 models:
   - name: adyen_settlement_report_aggregate_dbt
-    descipcion: "Transformacion en esta tabla"
+    descipcion: "Transformacion de adyen settlement report"
     columns:
       - name: company_account
       - name: merchant_account
@@ -27,5 +27,37 @@ models:
       - name: bank_card_commission_nc
       - name: dcc_markup_nc
       - name: num_txs
-
-
+  - name: adyen_payments_report_aggregate
+    columns:
+      - name: company_account
+      - name: merchant_account
+      - name: psp_reference
+      - name: merchant_reference
+      - name: payment_method
+      - name: booking_date
+      - name: booking_date
+      - name: timezone
+      - name: main_currency
+      - name: main_amount
+      - name: payment_currency
+      - name: received_pc
+      - name: authorised_pc
+      - name: captured_pc
+      - name: payable_sc
+      - name: commission_sc
+      - name: markup_sc
+      - name: scheme_fees_sc
+      - name: interchange_sc
+      - name: processing_fee_currency
+      - name: processing_fee_fc
+      - name: user_name
+      - name: payment_method_variant
+      - name: modification_merchant_reference
+      - name: reserved3
+      - name: reserved4
+      - name: reserved5
+      - name: reserved6
+      - name: reserved7
+      - name: reserved8
+      - name: reserved9
+      - name: reserved10
