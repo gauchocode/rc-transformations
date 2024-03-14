@@ -14,6 +14,7 @@ select
     COALESCE("terminal_id", '') as terminal_id,
     COALESCE("batch_number", 0) as batch_number,
     COALESCE("batch_closed_date", '') as batch_closed_date,
+    CAST("batch_closed_date" as DATE) as batch_closed_date_trunc,
     COALESCE("payment_method", '') as payment_method,
     COALESCE("creation_date", '') as creation_date ,
     COALESCE("timezone", '') as timezone,
