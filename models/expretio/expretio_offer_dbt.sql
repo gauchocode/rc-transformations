@@ -17,7 +17,7 @@ select
     "FARE"                      as fare,
     "FEE"                       as fee,
     "CURRENCY"                  as currency,
-    COALESCE()"REFERENCE", "")  as reference,
+    COALESCE("REFERENCE", "")   as reference,
     "NBR_PAX"                   as nbx_pax,
     "RQTDATE"                   as rqtdate,
     "STATION"                   as station
