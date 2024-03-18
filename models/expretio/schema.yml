@@ -1,0 +1,27 @@
+
+version: 2
+
+models:
+  - name: expretio_offer_dbt
+    descipcion: "Transformacion de expretio"
+    columns:
+      - name: market
+      - name: site
+      - name: cxr
+      - name: ddate
+      - name: dtime
+      - name: atime
+      - name: ddurati
+      - name: dstp
+      - name: dflight
+      - name: cabin
+      - name: type
+      - name: base
+      - name: taxes
+      - name: fare
+      - name: fee
+      - name: currenc
+      - name: referen
+      - name: nbx_pax
+      - name: rqtdate
+      - name: station
