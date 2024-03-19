@@ -13,11 +13,11 @@ select
     "CABIN"                     as cabin,
     "TYPE"                      as type,
     "BASE"                      as base,
-    COALESCE("TAXES", "")       as taxes,
+    COALESCE("TAXES", '')       as taxes,
     "FARE"                      as fare,
     "FEE"                       as fee,
     "CURRENCY"                  as currency,
-    COALESCE("REFERENCE", "")   as reference,
+    COALESCE("REFERENCE", '')   as reference,
     "NBR_PAX"                   as nbx_pax,
     "RQTDATE"                   as rqtdate,
     "STATION"                   as station
