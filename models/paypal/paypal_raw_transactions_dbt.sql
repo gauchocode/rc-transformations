@@ -3,9 +3,9 @@
 select 
     'SB'                                                                as ch,
     transaction_id                                                      as transaction_id,
-    COALESCE(transaction_info->'invoice_id', '')                        as invoice_id,
-    COALESCE(transaction_info->'paypal_reference_id', '')               as paypal_reference_id,
-    COALESCE(transaction_info->'paypal_reference_id_type', '')          as paypal_reference_id_type,
+    COALESCE(transaction_info->>'invoice_id', '')                        as invoice_id,
+    COALESCE(transaction_info->>'paypal_reference_id', '')               as paypal_reference_id,
+    COALESCE(transaction_info->>'paypal_reference_id_type', '')          as paypal_reference_id_type,
     transaction_info->'transaction_event_code'                          as transaction_event_code,
     transaction_info->'transaction_initiation_date'                     as transaction_initiation_date,
     transaction_info->'transaction_updated_date'                        as transaction_completion_date,
