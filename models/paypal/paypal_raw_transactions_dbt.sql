@@ -1,6 +1,7 @@
 {{ config(materialized="table" ) }}
 
 select 
+    SB                                                                  as ch,
     transaction_id                                                      as transaction_id,
     transaction_info->>'invoice_id'                                     as invoice_id,
     transaction_info->>'paypal_reference_id'                            as paypal_reference_id,
