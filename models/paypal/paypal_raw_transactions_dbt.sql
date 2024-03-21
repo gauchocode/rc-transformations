@@ -9,7 +9,7 @@ select
     transaction_info->'transaction_event_code'                                      as transaction_event_code,
     transaction_info->'transaction_initiation_date'                                 as transaction_initiation_date,
     transaction_info->'transaction_updated_date'                                    as transaction_completion_date,
-    COALESCE(ABS(CAST(transaction_info->'transaction_amount'->>'value' as FLOAT), 0))    as gross_transaction_amount,
+    ABS(COALESCE(CAST(transaction_info->'transaction_amount'->>'value' as FLOAT), 0))    as gross_transaction_amount,
     COALESCE(transaction_info->'transaction_amount'->>'currency_code', '')          as gross_transaction_currency,
     ABS(CAST(transaction_info->'fee_amount'->>'value' as FLOAT))                        as fee_amount,
     COALESCE(transaction_info->'fee_amount'->>'currency_code', '')                  as fee_currency,
