@@ -9,6 +9,6 @@ with payer_info_json as (
 select 
     (
         select * from payer_info_json
-    )
+    ),
     transaction_id            as transaccion
 from pp_transactions;
