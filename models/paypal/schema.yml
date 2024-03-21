@@ -5,4 +5,18 @@ models:
   - name: paypal_raw_transactions_dbt
     description: "Transformacion de paypal raw transactions"
     columns:
-      - name:  transaccion
+      - name: ch
+      - name: transaction_id
+      - name: invoice_id
+      - name: paypal_reference_id
+      - name: paypal_reference_id_type
+      - name: transaction_event_code
+      - name: transaction_initiation_date
+      - name: transaction_completion_date
+      - name: gross_transaction_amount
+      - name: gross_transaction_currency
+      - name: fee_amount
+      - name: fee_currency
+      - name: custom_field
+      - name: customer_id
+      - name: bank_reference_id
