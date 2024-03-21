@@ -9,7 +9,7 @@ select
     transaction_info->>'transaction_initiation_date'                    as transaction_initiation_date,
     transaction_info->>'transaction_updated_date'                       as transaction_completion_date,
     transaction_info->'transaction_amount'->>'value'                    as gross_transaction_amount,
-    CAST(transaction_info->'transaction_amount'->>'value' as FLOAT)     as gross_transaction_amount
+    CAST(transaction_info->'transaction_amount'->>'value' as FLOAT)     as gross_transaction_amount,
     transaction_info->'transaction_amount'->>'currency_code'            as gross_transaction_currency,
     -CAST(transaction_info->'fee_amount'->>'value' as FLOAT)            as fee_amount,
     transaction_info->'fee_amount'->>'currency_code'                    as fee_currency,
