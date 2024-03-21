@@ -3,6 +3,6 @@ version: 2
 
 models:
   - name: paypal_settlement_dbt
-    descipcion: "Transformacion de adyen settlement report"
+    descipcion: "Transformacion de paypal raw settlement"
     columns:
       - name: account_id
