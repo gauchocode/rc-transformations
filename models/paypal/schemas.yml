@@ -1,0 +1,8 @@
+
+version: 2
+
+models:
+  - name: adyen_settlement_report_aggregate_dbt
+    descipcion: "Transformacion de adyen settlement report"
+    columns:
+      - name: company_account
