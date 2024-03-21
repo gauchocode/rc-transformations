@@ -13,7 +13,7 @@ select
     transaction_info->'transaction_amount'->>'currency_code'            as gross_transaction_currency,
     -CAST(transaction_info->'fee_amount'->>'value' as FLOAT)            as fee_amount,
     transaction_info->'fee_amount'->>'currency_code'                    as fee_currency,
-    TRIM(BOTH '"' FROM transaction_info->>'custom_field')               as custom_field,
-    TRIM(BOTH '"' FROM transaction_info->>'paypal_account_id')          as customer_id,
-    TRIM(BOTH '"' FROM transaction_info->>'bank_reference_id')          as bank_reference_id
+    COALESCE(TRIM(BOTH '"' FROM transaction_info->>'custom_field'), '')               as custom_field,
+    COALESCE(TRIM(BOTH '"' FROM transaction_info->>'paypal_account_id'), '')          as customer_id,
+    COALESCE(TRIM(BOTH '"' FROM transaction_info->>'bank_reference_id'), '')          as bank_reference_id
 from pp_transactions
