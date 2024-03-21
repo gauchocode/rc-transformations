@@ -3,6 +3,6 @@ version: 2
 
 models:
   - name: paypal_raw_transactions_dbt
-    descipcion: "Transformacion de paypal raw settlement"
+    descipcion: "Transformacion de paypal raw transactions"
     columns:
-      - name: account_id
+      - name: transaccion_id
