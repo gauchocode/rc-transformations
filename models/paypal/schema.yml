@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: paypal_raw_transactions_dbt
+  - name: paypal_settlement
     description: "Transformacion de paypal raw transactions"
     columns:
       - name: ch
