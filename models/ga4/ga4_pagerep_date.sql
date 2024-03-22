@@ -2,7 +2,7 @@
 
 select 
     'date' as date,
-    SUM('userEngagementDuration') as user_engagement_duration
+    SUM(CAST(userEngagementDuration as INT)) as user_engagement_duration
 from 
     ga4_pages_path_report
 group by
