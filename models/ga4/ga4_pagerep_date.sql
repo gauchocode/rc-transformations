@@ -27,4 +27,4 @@ select
 	t1.total_revenue,
 	t2.engaged_sessions
 from data_t1 as t1
-full outer join data_t2 t2 on t1."date" = t2."date";
+full outer join data_t2 t2 on t1."date" = t2."date"
