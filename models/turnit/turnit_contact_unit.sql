@@ -27,6 +27,6 @@ select
     "ContactStreet"                     as contact_street,
     COALESCE("AnalyticalCode", '')      as analytical_code,
     "ContactCountry"                    as contact_country,
-    COALESCE("RegitrationCode", 0)      as regitration_code,
-    COALESCE("CommercialEntity", '')    as commercial_entity
+    COALESCE("RegitrationCode", '')     as regitration_code,
+    COALESCE("CommercialEntity", 0)     as commercial_entity
 from public.turnit_contact_unit
