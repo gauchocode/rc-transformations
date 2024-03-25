@@ -34,7 +34,7 @@ select
     COALESCE("RefundingCondition", '')                                  as refunding_condition,
     COALESCE("InsuranceMinimumPrice", 0)                                as insurance_minimum_price,
     "PriceDepartureEndDate"                                             as price_departure_end_date,
-    COALESCE("VoucherValidityPeriod", '')                               as voucher_validity_period,
+    COALESCE("VoucherValidityPeriod", 0)                                as voucher_validity_period,
     "PriceDepartureStartDate"                                           as price_departure_start_date,
     COALESCE("DiscountRateAfterFirstLeg", 0)                            as discount_rate_after_first_leg,
     "IsForInternationalJourney"                                         as is_for_international_journey,
