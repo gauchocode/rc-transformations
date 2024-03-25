@@ -19,6 +19,6 @@ select
     "StreetAddress"                     as street_address,
     "PlatformLatitude"                  as platform_latitude,
     "MarketingCityName"                 as marketing_city_name,
-    COALESCE("PlatformLongitude", '')   as platform_longitude
+    COALESCE("PlatformLongitude", 0)    as platform_longitude
 from public.turnit_bus_stop
 
