@@ -7,7 +7,7 @@ select
     COALESCE("Tier", '')    as tier,
     "Email"                 as email,
     COALESCE("Gender", '')  as gender,
-    COALESCE("Groups", [])  as groups,
+    "Groups"                as groups,
     "Country"               as country,
     "OwnerId"               as owner_id,
     "ZipCode"               as zip_code,
