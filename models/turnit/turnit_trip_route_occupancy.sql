@@ -4,7 +4,7 @@ select
     "id"            as id,
     "TripId"        as trip_id,
     "Leaving"       as leaving,
-    "CreateAt"      as create_at
+    "CreateAt"      as create_at,
     "Entering"      as entering,
     "StopCode"      as stop_code,
     "StopName"      as stop_name,
