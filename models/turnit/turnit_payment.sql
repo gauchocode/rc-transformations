@@ -23,8 +23,6 @@ select
     "PayerLastName"                     as payer_last_name,
     "PaymentMethod"                     as payment_method,
     COALESCE("PaymentUnitID", 0)        as payment_unit_id,
-    "PayerLastName"                     as payer_last_name,
-    "PaymentMethod"                     as payment_method,
     "VoucherNumber"                     as voucher_number,
     "PayerFirstName"                    as payer_first_name,
     "IsGroupEmployee"                   as is_group_employee,
