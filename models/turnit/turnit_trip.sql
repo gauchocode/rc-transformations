@@ -1,7 +1,7 @@
 {{ config(materialized="table") }}
 
 select
-    "id"                            as id
+    "id"                            as id,
     "LineId"                        as line_id,
     "TripId"                        as trip_id,
     "Company"                       as company,
