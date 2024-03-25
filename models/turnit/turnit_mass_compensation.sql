@@ -28,6 +28,6 @@ select
     "AreTravelPassTicketsCompensated"       as are_travel_pass_tickets_compensated,
     "IsSendingNotificationToSmsPreferred"   as is_sending_notification_to_sms_preferred,
     "IsProblematicTransactionMarkedSolved"  as is_problematic_transaction_marked_solved,
-    "IsSendingNotificationToEmailPreferred" as is_sending_notification_to_email_preferredb,
+    "IsSendingNotificationToEmailPreferred" as is_sending_notification_to_email_preferredb
 
 from  public.turnit_mass_compensation
