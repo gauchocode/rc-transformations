@@ -2,7 +2,7 @@
 
 select
     "id"                        as id,
-    COALESCE("Carbon", '')      as carbon,
+    COALESCE("Carbon", 0)       as carbon,
     "Points"                    as points,
     "Reason"                    as reason,
     "Status"                    as status,
