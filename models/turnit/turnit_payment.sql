@@ -4,7 +4,7 @@ select
     "Id"                                as id,
     COALESCE("Comment", '')             as comment,
     "CreateAt"                          as create_at,
-    "language"                          as language,
+    "Language"                          as language,
     COALESCE("PayerZip", '')            as payer_zip,
     "UpdateAt"                          as update_at,
     COALESCE("Affiliate", '')           as affiliate,
