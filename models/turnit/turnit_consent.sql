@@ -18,5 +18,5 @@ select
     "ValidUntil"                        as valid_until,
     COALESCE("PhoneNumber", '')         as phone_number,
     COALESCE("PhoneAreaCode", '')       as phone_area_code,
-    COALESCE("TravelAccountId", '')     as travel_account_id
+    COALESCE("TravelAccountId", 0)      as travel_account_id
 from public.turnit_consent
