@@ -39,7 +39,7 @@ select
     COALESCE("DiscountRateAfterFirstLeg", 0)                            as discount_rate_after_first_leg,
     "IsForInternationalJourney"                                         as is_for_international_journey,
     COALESCE("VoucherValidityPeriodUnit", '')                           as voucher_validity_ṕeriod_unit,
-    "VoucherCanSetValueOnCreation"                                      as voucher_can_set_value_on_creation
+    "VoucherCanSetValueOnCreation"                                      as voucher_can_set_value_on_creation,
     COALESCE("InsuranceMinimumPriceCurrency", '')                       as insurance_minimum_price_currency,
     "IsRefundAmountSetOnCancellation"                                   as is_refund_amount_set_on_cancellation,
     COALESCE("InsurancePercentageOfProductPrice", 0)                    as insurance_percentage_of_product_price,
