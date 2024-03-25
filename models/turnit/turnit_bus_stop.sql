@@ -20,5 +20,5 @@ select
     "PlatformLatitude"  as platform_latitude,
     "MarketingCityName" as marketing_city_name,
     "PlatformLongitude" as platform_longitude
-from turnit_bus_stop
+from public.turnit_bus_stop
 
