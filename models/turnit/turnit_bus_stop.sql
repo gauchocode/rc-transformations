@@ -6,7 +6,7 @@ select
     "Code"              as code,
     "Name"              as name,
     "CityName"          as city_name,
-    "CreatedAt"         as created_at,
+    "CreateAt"          as create_at,
     "Latitude"          as latitude,
     "Timezone"          as timezone,
     "UpdateAt"          as update_at,
