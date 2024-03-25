@@ -16,11 +16,11 @@ select
     "NumberingSystem"                               as numbering_system,
     "IsVehicleFlipped"                              as is_vehicle_flipped,
     "Floor"                                         as floor,
-    COALESCE("MaxAllowedStandingPassenger", '')     as max_allowed_standing_passenger,
+    COALESCE("MaxAllowedStandingPassenger", 0)     as max_allowed_standing_passenger,
     "SeatTotal"                                     as seat_total,
     "SeatByClass"                                   as seat_by_class,
     COALESCE("BlockedSeat", '')                     as blocked_seat,
-    COALESCE("ReservedSeat", '')                    as reserved_seat,
+    COALESCE("ReservedSeat", 0)                    as reserved_seat,
     "PlaceBySpace"                                  as place_by_space,
     "CreateAt"                                      as create_at,
     "UpdateAt"                                      as update_at
