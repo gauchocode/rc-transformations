@@ -16,6 +16,6 @@ select
     "ValidUntil"                as valid_until,
     "VoucherNumber"             as voucher_number,
     "TransactionCode"           as transaction_code,
-    "TravelAccountId"           as travel_account_id,
+    "TravelAccountId"           as travel_account_id
 
 from public.turnit_loyalty
