@@ -32,7 +32,7 @@ select
     COALESCE("VoucherMaxPayment", 0)                                    as voucher_max_payment,
     "PriceSaleStartDate"                                                as price_sale_start_date,
     COALESCE("RefundingCondition", '')                                  as refunding_condition,
-    COALESCE("InsuranceMinimumPrice", '')                               as insurance_minimum_price,
+    COALESCE("InsuranceMinimumPrice", 0)                                as insurance_minimum_price,
     "PriceDepartureEndDate"                                             as price_departure_end_date,
     COALESCE("VoucherValidityPeriod", '')                               as voucher_validity_period,
     "PriceDepartureStartDate"                                           as price_departure_start_date,
