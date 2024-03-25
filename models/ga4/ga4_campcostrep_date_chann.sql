@@ -1,6 +1,7 @@
 {{ config(materialized="table" ) }}
 
 select
+    CAST('date' as DATE)        as date,
 	"firstUserCampaignName"     as session_campaign_name,
 	"newUsers"                  as new_users,
 	"userEngagementDuration"    as user_engagement_duration, 
