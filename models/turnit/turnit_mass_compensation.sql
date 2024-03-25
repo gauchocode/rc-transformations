@@ -20,7 +20,7 @@ select
     COALESCE("PassengerNameFilter", '')         as passenger_name_filter,
     COALESCE("PassengerEmailFilter", '')        as passenger_email_filter,
     COALESCE("PassengerPhoneFilter", '')        as passenger_phone_filter,
-    COALESCE("TicketPriceAdditionValue", '')    as ticket_price_addition_value,
+    COALESCE("TicketPriceAdditionValue", 0)     as ticket_price_addition_value,
     "IsNotificationToSmsAllowed"                as is_notification_to_sms_allowed,
     "TicketPricePercentageValue"                as ticket_price_percentage_value,
     "AreLegLevelAddonsCompensated"              as are_leg_level_addons_compensated,
