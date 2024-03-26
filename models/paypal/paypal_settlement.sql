@@ -16,4 +16,4 @@ select
     COALESCE(TRIM(BOTH '"' FROM transaction_info->>'custom_field'), '')                 as custom_field,
     COALESCE(TRIM(BOTH '"' FROM transaction_info->>'paypal_account_id'), '')            as customer_id,
     COALESCE(TRIM(BOTH '"' FROM transaction_info->>'bank_reference_id'), '')            as bank_reference_id
-from pp_transactions
+from tmp_pp_transactions
