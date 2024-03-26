@@ -54,7 +54,7 @@ select
     COALESCE("OriginStopCode", '')              as origin_stop_code,
     COALESCE("PaxNationality", '')              as pax_nationality,
     COALESCE("RefundCurrency", '')              as refund_currency,
-    COALESCE("RefundedAmount", '')              as refunded_amount,
+    COALESCE("RefundedAmount", 0)               as refunded_amount,
     COALESCE("StopBreakPoint", '')              as stop_break_point,
     "VAT_percentage"                            as vat_percentage,
     "ArrivalDateTime"                           as arrival_date_time,
