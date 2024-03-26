@@ -6,7 +6,7 @@ select
     "Type"                                      as type,
     "Price"                                     as price,
     "PaxDoB"                                    as pax_do_b,
-    COALESCE("Trip_ID", '')                     as trip_id,
+    COALESCE("Trip_ID", 0)                      as trip_id,
     "CreateAt"                                  as create_at,
     "Currency"                                  as currency,
     COALESCE("Distance", 0)                     as distance,
