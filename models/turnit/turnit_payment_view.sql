@@ -41,4 +41,4 @@ select
     "PaymentSalesPointType"             as payment_sales_point_type,
     "BasketCreationDateTime"            as basket_creation_date_time
 
-from public.turnit_payment_view
+from public.turnit_payment
