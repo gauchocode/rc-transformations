@@ -28,7 +28,7 @@ select
     "IsGroupEmployee"                   as is_group_employee,
     "PaymentBankInfo"                   as payment_bank_info,
     "PaymentCurrency"                   as payment_currency,
-    "PaymentDateTime"                   as payment_date_time,
+    "PaymentDateTime"                   as payment_datetime,
     COALESCE("PaymentProvider", '')     as payment_provider,
     "PaymentContactId"                  as payment_contact_id,
     "PaymentCreatedBy"                  as payment_created_by,
@@ -39,6 +39,6 @@ select
     COALESCE("CorporateContractId", 0)  as corporate_contract_id,
     "PaymentSalesPointName"             as payment_sales_point_name,
     "PaymentSalesPointType"             as payment_sales_point_type,
-    "BasketCreationDateTime"            as basket_creation_date_time
+    "BasketCreationDateTime"            as basket_creation_datetime
 
 from public.turnit_payment

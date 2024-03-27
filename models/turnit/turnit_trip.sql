@@ -22,9 +22,9 @@ select
     "LineTemplateId"                as line_template_id,
     "TripServiceCode"               as trip_service_code,
     "ClassWithNumberedSeat"         as class_with_numbered_seat,
-    "TripDepartureDateTime"         as trip_departure_date_time,
-    "PlannedArrivalDateTime"        as planned_arrival_date_time,
-    "PlannedArrivalDateTimezone"    as planned_arrival_date_timezone,
-    "TripDepartureDateTimeTimezone" as trip_departure_date_time_timezone
+    "TripDepartureDateTime"         as trip_departure_datetime,
+    "PlannedArrivalDateTime"        as planned_arrival_datetime,
+    "PlannedArrivalDateTimezone"    as planned_arrival_datetime_zone,
+    "TripDepartureDateTimeTimezone" as trip_departure_datetimetime_zone
 
 from public.turnit_trip
