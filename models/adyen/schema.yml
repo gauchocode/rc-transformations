@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: adyen_settlement_report_aggregate_dbt
+  - name: adyen_settlement_report_aggregate
     descipcion: "Transformacion de adyen settlement report"
     columns:
       - name: company_account
@@ -27,7 +27,7 @@ models:
       - name: bank_card_commission_nc
       - name: dcc_markup_nc
       - name: num_txs
-  - name: adyen_payments_accounting_report_dbt
+  - name: adyen_payments_accounting_report
     columns:
       - name: company_account
       - name: merchant_account
