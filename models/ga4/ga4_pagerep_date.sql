@@ -8,5 +8,5 @@ select
 	transactions					as transactions
 	totalRevenue					as total_revenue
 	engagedSessions					as engaged_sessions
-	
-from public.ga4_pagerep_date
+
+from ga4_pagerep_date
