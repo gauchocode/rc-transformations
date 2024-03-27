@@ -8,7 +8,7 @@ select
     "UpdateAt"                  as update_at,
     "RouteOrder"                as route_order,
     "ArrivalStatus"             as arrival_status,
-    "DepartureStatus"           as Departure_Status
+    "DepartureStatus"           as departure_status,
     "ActualArrivalTime"         as actual_arrival_time,
     "ActualDepartureTime"       as actual_departure_time,
     "ScheduledArrivalTime"      as scheduled_arrival_time,
