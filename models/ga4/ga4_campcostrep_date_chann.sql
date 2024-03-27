@@ -15,4 +15,4 @@ select
 	totalRevenue				as totalRevenue,
 	engagedSessions				as engaged_sessions
 
-from social.ga4_campcostrep_date_chann
+from public.ga4_campcostrep_date_chann
