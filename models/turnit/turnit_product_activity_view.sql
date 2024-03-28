@@ -65,7 +65,7 @@ select
     COALESCE("TravelAccountId" , 0)                                         as travel_account_id,
     COALESCE("TravelPassNumber", '')                                        as travel_pass_number,
     "DepartureDateTime"                                                     as departure_datetime,
-    "OperationDateTime" AT TIME ZONE 'UTC'AT TIME ZONE 'America/NewYork'    as operation_datetime,
+    "OperationDateTime" AT TIME ZONE 'UTC'AT TIME ZONE 'America/New_York'    as operation_datetime,
     "Price_without_VAT"                                                     as price_without_vat,
     "SalesReportNumber"                                                     as sales_report_number,
     "TransactionStatus"                                                     as transaction_status,
