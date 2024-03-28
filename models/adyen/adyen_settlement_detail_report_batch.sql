@@ -9,7 +9,7 @@ select
         COALESCE("merchant_reference", '')                          as merchant_reference,
         COALESCE("payment_method", '')                              as payment_method,
         to_timestamp("creation_date", 'YYYY-MM-DD"T"HH24:MI:SS')    as creation_date,
-        CAST("creation_date_trunc" as DATE)                         as creation_date_trunc
+        CAST("creation_date_trunc" as DATE)                         as creation_date_trunc,
         COALESCE("timezone", '')                                    as timezone,
         COALESCE("type", '')                                        as type
         COALESCE("modification_reference", '')                      as modification_reference,
