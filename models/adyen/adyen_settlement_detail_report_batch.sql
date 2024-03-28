@@ -11,7 +11,7 @@ select
         to_timestamp("creation_date", 'YYYY-MM-DD"T"HH24:MI:SS')    as creation_date,
         CAST("creation_date_trunc" as DATE)                         as creation_date_trunc,
         COALESCE("timezone", '')                                    as timezone,
-        COALESCE("type", '')                                        as type
+        COALESCE("type", '')                                        as type,
         COALESCE("modification_reference", '')                      as modification_reference,
         COALESCE("gross_currency", '')                              as gross_currency,
         COALESCE("gross_debit_gc", 0)                               as gross_debit_gc,
@@ -35,7 +35,6 @@ select
         COALESCE("reserved9", '')                                   as reserved9,
         COALESCE("reserved10", '')                                  as reserved10,
         COALESCE("payment_fees_nc", 0)                              as payment_fees_nc,
-        COALESCE("issuer_country", '')                              as issuer_country,
-
+        COALESCE("issuer_country", '')                              as issuer_country
 
 from public.adyen_settlement_detail_report_batch
