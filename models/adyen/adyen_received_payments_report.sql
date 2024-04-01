@@ -14,7 +14,7 @@ select
     COALESCE("risk_scoring", 0)                         as risk_scoring,
     COALESCE("shopper_interaction", '')                 as shopper_interaction,
     COALESCE("shopper_name", '')                        as shopper_name,
-    COALESCE("shopper_pan", '')                         as shopper_pan,
+    COALESCE("shopper_pan", 0)                          as shopper_pan,
     COALESCE("shopper_ip", '')                          as shopper_ip,
     COALESCE("shopper_country", '')                     as shopper_country,
     COALESCE("issuer_name", '')                         as issuer_name,
