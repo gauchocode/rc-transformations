@@ -50,7 +50,7 @@ select
     COALESCE("reserved7", '')                           as reserved7,
     COALESCE("reserved8", '')                           as reserved8,
     COALESCE("reserved9", '')                           as reserved9,
-    COALESCE("reserved10" '')                           as reserved10,
+    COALESCE("reserved10" '')                           as reserved10
 
 
 from adyen_received_payments_report
