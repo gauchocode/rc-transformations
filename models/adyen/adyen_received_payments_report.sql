@@ -4,7 +4,7 @@ select
     COALESCE("company_account", '')                     as company_account,
     COALESCE("merchant_account", '')                    as merchant_account,
     COALESCE("psp_reference", '')                       as psp_reference,
-    COALESCE("merchant_reference", '')                  as merchant_reference,
+    COALESCE("merchant_reference", 0)                   as merchant_reference,
     COALESCE("payment_method", '')                      as payment_method,
     CAST(creation_date as DATE)                         as creation_date,
     COALESCE("timezone", '')                            as timezone,
