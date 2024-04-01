@@ -32,7 +32,7 @@ select
     COALESCE("billing_street", '')                      as billing_street,
     COALESCE("billing_house_number___name", '')         as billing_house_number___name,
     COALESCE("billing_city", '')                        as billing_city,
-    COALESCE("billing_postal_code___zip", '')           as billing_postal_code___zip,
+    COALESCE("billing_postal_code___zip", 0)            as billing_postal_code___zip,
     COALESCE("billing_state___province", '')            as billing_state___province,
     COALESCE("billing_country", '')                     as billing_country,
     COALESCE("delivery_street", '')                     as delivery_street,
