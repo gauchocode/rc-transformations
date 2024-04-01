@@ -7,7 +7,7 @@ select
     COALESCE("merchant_reference", 0)                   as merchant_reference,
     COALESCE("payment_method", '')                      as payment_method,
     CAST(creation_date as DATE)                         as creation_date,
-    COALESCE("timezone", '')                            as timezone,
+    COALESCE("time_zone", '')                            as timezone,
     COALESCE("currency", '')                            as currency ,
     COALESCE("amount", 0)                               as main_amount,
     COALESCE("type", '')                                as type,
