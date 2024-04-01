@@ -44,13 +44,13 @@ select
     COALESCE("acquirer_reference", 0)                   as acquirer_reference,
     COALESCE("payment_method_variant", '')              as payment_method_variant ,
     COALESCE("raw_acquirer_response", '')               as raw_acquirer_response,
-    COALESCE("reserved4", '')                           as reserved4,
-    COALESCE("reserved5", '')                           as reserved5,
-    COALESCE("reserved6", '')                           as reserved6,
-    COALESCE("reserved7", '')                           as reserved7,
-    COALESCE("reserved8", '')                           as reserved8,
-    COALESCE("reserved9", '')                           as reserved9,
-    COALESCE("reserved10" '')                           as reserved10
+    'reserved4'                                         as reserved4,
+    'reserved5'                                         as reserved5,
+    'reserved6'                                         as reserved6,
+    'reserved7'                                         as reserved7,
+    'reserved8'                                         as reserved8,
+    'reserved9'                                         as reserved9,
+    'reserved10'                                        as reserved10
 
 
 from adyen_received_payments_report
