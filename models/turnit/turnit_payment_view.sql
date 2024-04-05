@@ -21,7 +21,7 @@ select
     COALESCE("PaymentGroup", 0)         as payment_group,
     "PaymentValue"                      as payment_value,
     "PayerLastName"                     as payer_last_name,
-    replace('PaymentMethod', 'PAYMENT_TYPE.', '')                     as payment_method,
+    replace("PaymentMethod", 'PAYMENT_TYPE.', '')                     as payment_method,
     COALESCE("PaymentUnitID", 0)        as payment_unit_id,
     "VoucherNumber"                     as voucher_number,
     "PayerFirstName"                    as payer_first_name,
