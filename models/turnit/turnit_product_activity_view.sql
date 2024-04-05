@@ -3,7 +3,7 @@
 select 
     "Id"                                                                    as id,
     "Code"                                                                  as code,
-    replace("Type", 'TRANSACTION_', '')                                     as type,
+    replace("Type", 'TRANSACTION_TYPE.', '')                                as type,
     "Price"                                                                 as price,
     "PaxDoB"                                                                as pax_do_b,
     COALESCE("Trip_ID", 0)                                                  as trip_id,

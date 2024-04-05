@@ -21,7 +21,7 @@ select
     COALESCE("PaymentGroup", 0)         as payment_group,
     "PaymentValue"                      as payment_value,
     "PayerLastName"                     as payer_last_name,
-    "PaymentMethod"                     as payment_method,
+    replace('PaymentMethod', 'PAYMENT_TYPE.', '')                     as payment_method,
     COALESCE("PaymentUnitID", 0)        as payment_unit_id,
     "VoucherNumber"                     as voucher_number,
     "PayerFirstName"                    as payer_first_name,
@@ -38,7 +38,7 @@ select
     COALESCE("PaymentDynamicInfo" , '') as payment_dynamic_info,
     COALESCE("CorporateContractId", 0)  as corporate_contract_id,
     "PaymentSalesPointName"             as payment_sales_point_name,
-    "PaymentSalesPointType"             as payment_sales_point_type,
+    replace("PaymentSalesPointType", 'SALES_POINT_TYPE.', '')             as payment_sales_point_type,
     "BasketCreationDateTime"            as basket_creation_datetime
 
 from public.turnit_payment
