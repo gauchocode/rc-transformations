@@ -23,7 +23,7 @@ select
     replace("Operation", 'ACTIVITY_TYPE.', '')                              as operation,
     COALESCE("PaxGender", '')                                               as pax_gender,
     COALESCE("PriceList", '')                                               as price_list,
-    COALESCE(replace('SeatClass', 'COMFORT_LEVEL.', '')  "SeatClass", '')   as seat_class,
+    COALESCE(replace("SeatClass", 'COMFORT_LEVEL.', ''), '')   as seat_class,
     COALESCE("ServiceId", 0)                                                as service_id,
     COALESCE("SpaceType", '')                                               as space_type,
     "Attributes"                                                            as attributes,
