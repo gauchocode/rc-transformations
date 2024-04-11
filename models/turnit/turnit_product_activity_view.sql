@@ -77,7 +77,7 @@ select
     COALESCE("DiscountDynamicInfoPax", '')                                  as discount_dynamic_info_pax,
     COALESCE("DiscountVoucherNumbers", '')                                  as discount_voucher_numbers,
     "OperationSalesPointName"                                               as operation_sales_point_name,
-    "OperationSalesPointType"                                               as operation_sales_point_type,
+    replece("OperationSalesPointType", 'SALES_POINT_TYPE.', '')             as operation_sales_point_type,
     COALESCE("RelatedTravelPassNumber", '')                                 as related_travel_pass_number,
     COALESCE("JourneyDestinationStopCode", '')                              as journey_destination_stop_code,
     COALESCE("AmountDiscountedWithVoucher", 0)                              as amount_discounted_with_voucher
