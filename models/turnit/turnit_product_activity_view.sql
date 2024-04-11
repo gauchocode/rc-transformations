@@ -20,7 +20,7 @@ select
     COALESCE("GroupGuid", '')                                               as group_guid,
     COALESCE("ObtNumber", '')                                               as obt_number,
     "OpenUntil"                                                             as open_until,
-    replace("Operation", 'ACTIVITY_TYPE.', '')                              as operation
+    replace("Operation", 'ACTIVITY_TYPE.', '')                              as operation,
     COALESCE("PaxGender", '')                                               as pax_gender,
     COALESCE("PriceList", '')                                               as price_list,
     COALESCE(replace('SeatClass', 'COMFORT_LEVEL.', '')  "SeatClass", '')   as seat_class,
