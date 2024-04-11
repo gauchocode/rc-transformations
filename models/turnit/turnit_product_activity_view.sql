@@ -2,7 +2,7 @@
 
 select 
     "Id"                                                                    as id,
-    "Code"                                                                  as code,
+    regexp_replace("Code", '[\w]+\.', '', 'g')                              as code
     replace("Type", 'TRANSACTION_TYPE.', '')                                as type,
     "Price"                                                                 as price,
     "PaxDoB"                                                                as pax_do_b,
@@ -20,10 +20,10 @@ select
     COALESCE("GroupGuid", '')                                               as group_guid,
     COALESCE("ObtNumber", '')                                               as obt_number,
     "OpenUntil"                                                             as open_until,
-    "Operation"                                                             as operation,
+    replace("Operation", 'ACTIVITY_TYPE.', '')                              as operation
     COALESCE("PaxGender", '')                                               as pax_gender,
     COALESCE("PriceList", '')                                               as price_list,
-    COALESCE("SeatClass", '')                                               as seat_class,
+    COALESCE(replace('SeatClass', 'COMFORT_LEVEL.', '')  "SeatClass", '')   as seat_class,
     COALESCE("ServiceId", 0)                                                as service_id,
     COALESCE("SpaceType", '')                                               as space_type,
     "Attributes"                                                            as attributes,
