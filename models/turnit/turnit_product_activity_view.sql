@@ -2,7 +2,7 @@
 
 select 
     "Id"                                                                    as id,
-    regexp_replace("Code", '[\w]+\.', '', 'g')                              as code
+    regexp_replace("Code", '[\w]+\.', '', 'g')                              as code,
     replace("Type", 'TRANSACTION_TYPE.', '')                                as type,
     "Price"                                                                 as price,
     "PaxDoB"                                                                as pax_do_b,
