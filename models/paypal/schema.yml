@@ -12,11 +12,20 @@ models:
       - name: paypal_reference_id_type
       - name: transaction_event_code
       - name: transaction_initiation_date
+      - name: transaction_initiation_date_utc
       - name: transaction_completion_date
+      - name: transaction_completion_date_utc
+      - name: transaction_debit_or_credit
       - name: gross_transaction_amount
       - name: gross_transaction_currency
+      - name: fee_debit_or_credit
       - name: fee_amount
       - name: fee_currency
       - name: custom_field
       - name: customer_id
+      - name: payment_tracking_id
+      - name: store_id
       - name: bank_reference_id
+      - name: credit_transactional_fee
+      - name: credit_promotional_fee
+      - name: credit_term
