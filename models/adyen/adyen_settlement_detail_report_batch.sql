@@ -35,6 +35,8 @@ select
         COALESCE("reserved7", '')                                       as reserved7,
         COALESCE("reserved8", '')                                       as reserved8,
         COALESCE("reserved9", '')                                       as reserved9,
-        COALESCE("reserved10", '')                                      as reserved10
+        COALESCE("reserved10", '')                                      as reserved10,
+        COALESCE("payment_fees_nc", 0)                                  as payment_fees_nc,
+        COALESCE("issuer_country", "")                                  as issuer_country
 
 from public.adyen_settlement_detail_report_batch
