@@ -11,11 +11,7 @@ select
     COALESCE("timezone", '')                        as timezone,
     COALESCE("main_currency", '')                   as main_currency ,
     COALESCE("main_amount", 0)                      as main_amount,
-<<<<<<< HEAD
-    replace('record_type', 'record_type', '')       as record_type,
-=======
     COALESCE("record_type", '')                     as record_type,
->>>>>>> 003de55 (Modificaciones lionel abril 17)
     COALESCE("payment_currency", '')                as payment_currency,
     COALESCE("received_pc", 0)                      as received_pc,
     COALESCE("authorised_pc", 0)                    as authorised_pc,
