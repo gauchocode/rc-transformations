@@ -17,7 +17,7 @@ select
         CAST("gross_debit_gc" as double precision)                      as gross_debit_gc,
         CAST("gross_credit_gc" as double precision)                     as gross_credit_gc,
         CAST("exchange_rate" as double precision)                       as exchange_rate,
-        COALESCE("net_currency", 0)                                     as net_currency,
+        COALESCE("net_currency", '')                                    as net_currency,
         COALESCE(CAST("net_debit_nc" as double precision), 0)           as net_debit_nc,
         COALESCE(CAST("net_credit_nc" as double precision), 0)          as net_credit_nc,
         COALESCE(CAST("commission_nc" as double precision), 0)          as commission_nc,
