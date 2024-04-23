@@ -15,7 +15,7 @@ select
     "CreatedBy"                             as created_by,
     "CreatedOn"                             as created_on,
     "UsageType"                             as usage_type,
-    "UsedAmount"                            as user_amount,
+    "UsedAmount"                            as used_amount,
     "ValidUntil"                            as valid_until,
     "CancelledBy"                           as cancelled_by,
     "CancelledOn"                           as cancelled_on,
