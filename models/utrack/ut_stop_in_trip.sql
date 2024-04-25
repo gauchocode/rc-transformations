@@ -16,4 +16,4 @@ select
     "ScheduledDepartureTime"    as scheduled_departure_time,
     "DepartureTimeDifference"   as departure_time_difference
 
-from stop_in_trip
+from ut_stop_in_trip

@@ -10,4 +10,4 @@ select
     "DepartureDiference"    as departure_diference,
     "ETAUtrackDeparture"    as eta_utrack_departure
 
-from utrack_vs_actual
+from ut_utrack_vs_actual
