@@ -1,6 +1,6 @@
 {{ config(materialized="table" ) }}
 
-with basket as (SELECT BasketCode, max(trip_id) as trip_id
+with basket as (SELECT turnit_product_activity_view.BasketCode, max(trip_id) as trip_id
     from public.turnit_product_activity_view
     group by BasketCode)
 
