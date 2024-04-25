@@ -16,4 +16,4 @@ select
     "NearAccuracyMinutes"   as near_accuracy_minutes,
     "NearAccuracySeconds"   as near_accuracy_seconds
 
-from utrack.stop_in_trip_prediction_accuracy
+from stop_in_trip_prediction_accuracy

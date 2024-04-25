@@ -16,4 +16,4 @@ select
     "ScheduledDepartureTime"    as scheduled_departure_time,
     "DepartureTimeDifference"   as departure_time_difference
 
-from utrack.eta_utrack_stop_in_trip
+from eta_utrack_stop_in_trip
