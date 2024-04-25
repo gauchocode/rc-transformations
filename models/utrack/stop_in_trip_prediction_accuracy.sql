@@ -12,7 +12,7 @@ select
     "FarAccuracyMinutes"    as far_accuracy_minutes,
     "FarAccuracySeconds"    as far_accuracy_seconds,
     "MidAccuracyMinutes"    as mid_accuracy_minutes,
-    "MidAccuracySeconds"    as mid_accurac_seconds,
+    "MidAccuracySeconds"    as mid_accuracy_seconds,
     "NearAccuracyMinutes"   as near_accuracy_minutes,
     "NearAccuracySeconds"   as near_accuracy_seconds
 
