@@ -12,4 +12,4 @@ select
     "NearAccuracyMinutes"   as near_accuracy_minutes,
     "NearAccuracySeconds"   as near_accuracy_seconds
 
-from ut_trip_prediction_accuracy
+from public.ut_trip_prediction_accuracy
