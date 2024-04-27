@@ -25,4 +25,4 @@ select
     ''                                                                                                              as credit_transactional_fee,
     ''                                                                                                              as credit_promotional_fee,
     ''                                                                                                              as credit_term
-from public.pp_transactions
+from pp_transactions
