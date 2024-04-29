@@ -8,7 +8,7 @@ select
         COALESCE("psp_reference", '')                                                                   as psp_reference,
         COALESCE(CAST("merchant_reference" as VARCHAR), '')                                             as merchant_reference,
         COALESCE("payment_method", '')                                                                  as payment_method,
-        to_timestamp("creation_date", 'YYYY-MM-DD"T"HH24:MI:SS')                                        as creation_date,
+        COALESCE("creation_date", '')                                                                   as creation_date,
         CAST("creation_date" AS DATE)                                                                   as creation_date_trunc,
         COALESCE("timezone", '')                                                                        as timezone,
         COALESCE("type", '')                                                                            as type,
