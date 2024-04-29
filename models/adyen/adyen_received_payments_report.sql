@@ -6,7 +6,7 @@ select
     COALESCE("psp_reference", '')                       as psp_reference,
     COALESCE(CAST("merchant_reference" as VARCHAR), '') as merchant_reference,
     COALESCE("payment_method", '')                      as payment_method,
-    CAST(creation_date as DATE)                         as creation_date,
+    CAST('creation_date' as DATE)                       as creation_date,
     COALESCE("time_zone", '')                           as timezone,
     COALESCE("currency", '')                            as currency ,
     COALESCE("amount", 0)                               as main_amount,
