@@ -9,7 +9,7 @@ select
     "HasPin"                                as has_pin,
     "Number"                                as number,
     "OwnerId"                               as owner_id,
-    "CreateAt"                              as created_at,
+    "CreateAt"                              as create_at,
     "Currency"                              as currency,
     "UpdateAt"                              as update_at,
     "CreatedBy"                             as created_by,
