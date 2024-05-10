@@ -24,7 +24,7 @@ select
     "ClassWithNumberedSeat"         as class_with_numbered_seat,
     "TripDepartureDateTime"         as trip_departure_datetime,
     "PlannedArrivalDateTime"        as planned_arrival_datetime,
-    "PlannedArrivalDateTimezone"    as planned_arrival_datetime_zone,
-    "TripDepartureDateTimeTimezone" as trip_departure_datetimetime_zone
+    "PlannedArrivalDateTimezone"    as planned_arrival_date_timezone,
+    "TripDepartureDateTimeTimezone" as trip_departure_datetime_timezone
 
 from public.turnit_trip
