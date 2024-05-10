@@ -14,7 +14,7 @@ select
     "CompanyId"                     as company_id,
     COALESCE("Direction", '')       as direction,
     "LineBrand"                     as line_brand,
-    "LineNumber"                    as LineNumber,
+    "LineNumber"                    as line_number,
     "TripStatus"                    as trip_status,
     COALESCE("Subcontractor", '')   as subcontractor,
     "TransportType"                 as transport_type,
