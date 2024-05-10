@@ -13,7 +13,7 @@ select
     "Longitude"                         as longitude,
     "CountryCode"                       as country_code,
     "CountryName"                       as country_name,
-    "HasPriority"                       as has_priotity,
+    "HasPriority"                       as has_priority,
     COALESCE("PlatformName", '')        as platform_name,
     "IsMultiLegHub"                     as is_multi_leg_hub,
     "StreetAddress"                     as street_address,
