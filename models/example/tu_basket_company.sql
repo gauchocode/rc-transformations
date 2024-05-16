@@ -1,11 +1,11 @@
 {{ config(materialized="table" ) }}
 
-with basket as (SELECT turnit_product_activity_view.BasketCode, max(trip_id) as trip_id
+with basket as (SELECT public.turnit_product_activity_view.basket_code, max(trip_id) as trip_id
     from public.turnit_product_activity_view
-    group by BasketCode)
+    group by basket_code)
 
  
-select b.BasketCode as basket_code, COALESCE(substr(t.company, 10, 8), 'Others') as company
+select b.basket_code as basket_code, COALESCE(substr(t.company, 10, 8), 'Others') as company
 
  from basket b
 
