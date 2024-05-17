@@ -12,7 +12,7 @@ select
     COALESCE("DelayTime", 0)                    as delay_time,
     COALESCE("Direction", '')                   as direction,
     "BusCompany"                                as bus_company,
-    "LineNumber"                                as line_number,
+    "LineNumber"                                as linenumber,
     "LineEndDate"                               as line_end_date,
     "LineStartDate"                             as line_start_date,
     COALESCE("BusCompanyUnit", '')              as bus_company_unit,
