@@ -37,4 +37,4 @@ select
         0                                                                                               as payment_fees_nc,
         ''                                                                                              as issuer_country
 
-from public.adyen_settlement_detail_report_batch
+from adyen.adyen_settlement_detail_report_batch

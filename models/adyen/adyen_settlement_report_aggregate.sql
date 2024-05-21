@@ -23,4 +23,4 @@ select
     COALESCE("bank_card_commission_nc", 0)      as bank_card_commission_nc,
     COALESCE("dcc_markup_nc", '')               as dcc_markup_nc,
     COALESCE("num_txs", 0)                      as num_txs
-from adyen_settlement_report_aggregate
+from adyen.adyen_settlement_report_aggregate
