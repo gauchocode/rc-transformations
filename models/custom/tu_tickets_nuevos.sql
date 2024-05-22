@@ -51,7 +51,13 @@ with pav_fee_pc as (
 	from public.turnit_payment_view pv
 	left join public.turnit_voucher v on pv.voucher_number = v.number
 	where pv.payment_method='VOUCHER'
-	group by pv.basket_code, pv.payment_group) 	
+	group by pv.basket_code, pv.payment_group),
+	
+	transbordo as (
+	select distinct product_code
+	from public.turnit_product_activity_view
+	where type = 'BUS_TICKET' and operation_group = 1 and operation_user <> '888' and leg_order = 2	
+	)
 	
 SELECT p.id, p.trip_id, p.operation_datetime as operation_datetime, p.basket_code, p.operation_group, p.product_code, 
 p.transaction_code, p.related_product_code, p.transaction_status,
@@ -83,11 +89,21 @@ coalesce(pv_reference.reference, '') as payment_reference
 		        END
 	END AS _canal_venta
 
-,coalesce(r.company, '') as company_sc
+--,coalesce(r.company, '') as company_sc_
 ,CONCAT(p.journey_origin_stop_code,' - ', p.journey_destination_stop_code) as od,
 p.journey_origin_stop_code as origen, p.journey_destination_stop_code as destino,
-r.ruta_nivel_1, coalesce(tra.tramo, 'Sin Tramo') as tramo
+coalesce(r.ruta_nivel_1, 'Sin ruta') as ruta_nivel_1, coalesce(tra.tramo, 'Sin Tramo') as tramo, 
+p.leg_order, 
+case 
+	WHEN transbordo.product_code IS NULL THEN 'No'
+        ELSE 'Si'
+    END AS transbordo
 
+,case 
+	when transbordo.product_code is not null then 'Atlanta'
+	else coalesce(r.company, 'Others')
+end as company_sc
+    
 FROM public.turnit_product_activity_view p
 left join public.turnit_trip t on p.trip_id = t.trip_id
 left join pav_fee_pc on pav_fee_pc.related_product_code = p.product_code
@@ -103,5 +119,6 @@ left join public.maestros_ma_rutas r on cast(r.service_code as int) = cast(t.tri
 left join public.turnit_bus_stop o on o.code = p.journey_origin_stop_code
 left join public.turnit_bus_stop d on d.code = p.journey_destination_stop_code
 left join public.maestros_ma_tramos tra on tra.od = CONCAT(p.journey_origin_stop_code,' - ', p.journey_destination_stop_code)
+left join transbordo on transbordo.product_code = p.product_code 
 
-where p.type = 'BUS_TICKET' and p.operation_group = 1 and p.operation_user <> '888' 
+where p.type = 'BUS_TICKET' and p.operation_group = 1 and p.operation_user <> '888' --and p.leg_order = 2
