@@ -73,13 +73,13 @@ select
     COALESCE("RelatedProductCode", '')                                          as related_product_code,
     COALESCE("DestinationStopCode", '')                                         as destination_stop_code,
     "IsInboundJourneyWay"                                                       as is_inbound_journey_way,
-    COALESCE("JourneyOriginStopCode", '')                                       as journey_origin_stop_code,
+    COALESCE(replace("JourneyOriginStopCode", 'UCL', 'UCF'), '')                as journey_origin_stop_code,
     COALESCE("DiscountDynamicInfoPax", '')                                      as discount_dynamic_info_pax,
     COALESCE("DiscountVoucherNumbers", '')                                      as discount_voucher_numbers,
     "OperationSalesPointName"                                                   as operation_sales_point_name,
     replace("OperationSalesPointType", 'SALES_POINT_TYPE.', '')                 as operation_sales_point_type,
     COALESCE("RelatedTravelPassNumber", '')                                     as related_travel_pass_number,
-    COALESCE("JourneyDestinationStopCode", '')                                  as journey_destination_stop_code,
+    COALESCE(replace("JourneyDestinationStopCode", 'FMP', 'FM'), '')            as journey_destination_stop_code,
     COALESCE("AmountDiscountedWithVoucher", 0)                                  as amount_discounted_with_voucher
     
 from public.turnit_product_activity_view    
