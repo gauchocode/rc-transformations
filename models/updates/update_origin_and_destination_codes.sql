@@ -3,4 +3,4 @@
 ) }}
 
 -- Llamar a la macro de actualización
-{% do update_origin_and_destination_codes() %}
+{% do update_stop_codes() %}

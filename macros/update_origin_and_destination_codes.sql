@@ -1,6 +1,6 @@
-{% macro update_origin_and_destination_codes() %}
+{% macro update_stop_codes() %}
 -- Actualiza columnas en la tabla turnit_product_activity_view
-UPDATE {{ ref('public.turnit_product_activity_view') }}
+UPDATE {{ ref('turnit_product_activity_view') }}
 SET
     public.journey_origin_stop_code = CASE 
         WHEN public.journey_origin_stop_code = 'UCL' THEN 'UFL'
