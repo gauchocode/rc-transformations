@@ -51,7 +51,7 @@ select
     COALESCE("ManualDiscount", '')                                              as manual_discount,
     COALESCE("OperationCE_ID", 0)                                               as operation_ce_id,
     COALESCE("OperationGroup", 0)                                               as operation_group,
-    COALESCE(replace("OriginStopCode", 'FMP', 'FM'), '')                        as origin_stop_code,
+    COALESCE("OriginStopCode", '')                                              as origin_stop_code,
     COALESCE("PaxNationality", '')                                              as pax_nationality,
     COALESCE("RefundCurrency", '')                                              as refund_currency,
     COALESCE("RefundedAmount", 0)                                               as refunded_amount,
@@ -71,15 +71,15 @@ select
     replace("TransactionStatus", 'TRANSACTION_STATUS.', '')                     as transaction_status,
     "OperationContactId"                                                        as operation_contact_id,
     COALESCE("RelatedProductCode", '')                                          as related_product_code,
-    COALESCE(replace("DestinationStopCode", 'UCL', 'UFL'), '')                  as destination_stop_code,
+    COALESCE("DestinationStopCode", '')                                         as destination_stop_code,
     "IsInboundJourneyWay"                                                       as is_inbound_journey_way,
-    COALESCE(replace("JourneyOriginStopCode", 'FMP', 'FM'), '')                 as journey_origin_stop_code,
+    COALESCE("JourneyOriginStopCode", '')                                       as journey_origin_stop_code,
     COALESCE("DiscountDynamicInfoPax", '')                                      as discount_dynamic_info_pax,
     COALESCE("DiscountVoucherNumbers", '')                                      as discount_voucher_numbers,
     "OperationSalesPointName"                                                   as operation_sales_point_name,
     replace("OperationSalesPointType", 'SALES_POINT_TYPE.', '')                 as operation_sales_point_type,
     COALESCE("RelatedTravelPassNumber", '')                                     as related_travel_pass_number,
-    COALESCE(replace("JourneyDestinationStopCode", 'UCL', 'UFL'), '')           as journey_destination_stop_code,
+    COALESCE("JourneyDestinationStopCode", '')                                  as journey_destination_stop_code,
     COALESCE("AmountDiscountedWithVoucher", 0)                                  as amount_discounted_with_voucher
     
 from public.turnit_product_activity_view    
