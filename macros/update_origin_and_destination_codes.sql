@@ -1,6 +1,4 @@
-{% macro update_stop_codes() %}
--- Actualiza columnas en la tabla turnit_product_activity_view
-UPDATE {{ ref('turnit_product_activity_view') }}
+UPDATE turnit_product_activity_view
 SET
     journey_origin_stop_code = CASE 
         WHEN journey_origin_stop_code = 'UCL' THEN 'UFL'
@@ -22,4 +20,3 @@ SET
         WHEN destination_stop_code = 'FMP' THEN 'FM'
         ELSE destination_stop_code
     END;
-{% endmacro %}
