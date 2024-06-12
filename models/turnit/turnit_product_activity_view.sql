@@ -1,9 +1,5 @@
 {{ config(materialized="table") }}
 
-{{ config(
-    materialized = 'table'  -- Puedes usar 'table', 'view' o 'incremental' según tus necesidades
-) }}
-
 WITH updated_view AS (
     SELECT
         *,
