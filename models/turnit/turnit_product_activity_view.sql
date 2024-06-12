@@ -1,5 +1,30 @@
 {{ config(materialized="table") }}
 
+{{ config(
+    materialized = 'table'  -- Puedes usar 'table', 'view' o 'incremental' según tus necesidades
+) }}
+
+WITH updated_view AS (
+    SELECT
+        *,
+        replace(JourneyOriginStopCode, 'UCL', 'UFL')                as new_journey_origin_stop_code,
+        replace(JourneyOriginStopCode, 'FMP', 'FM')                 as final_journey_origin_stop_code,
+        replace(JourneyDestinationStopCode, 'UCL', 'UFL')           as new_journey_destination_stop_code,
+        replace(JourneyDestinationStopCode, 'FMP', 'FM')            as final_journey_destination_stop_code,
+        replace(OriginStopCode, 'UCL', 'UFL')                       as new_origin_stop_code,
+        replace(OriginStopCode, 'FMP', 'FM')                        as final_origin_stop_code,
+        replace(DestinationStopCode, 'UCL', 'UFL')                  as new_destination_stop_code,
+        replace(DestinationStopCode, 'FMP', 'FM')                   as final_destination_stop_code
+    FROM public.turnit_product_activity_view
+)
+SELECT
+    *,
+    COALESCE(final_journey_origin_stop_code, journey_origin_stop_code)              as   journey_origin_stop_code,
+    COALESCE(final_journey_destination_stop_code, journey_destination_stop_code)    as journey_destination_stop_code,
+    COALESCE(final_origin_stop_code, origin_stop_code)                              as origin_stop_code,
+    COALESCE(final_destination_stop_code, destination_stop_code)                    as destination_stop_code
+FROM updated_view;
+
 select 
     "Id"                                                                        as id,
     regexp_replace("Code", '[\w]+\.', '', 'g')                                  as code,
