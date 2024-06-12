@@ -19,7 +19,7 @@ SELECT
     COALESCE(final_journey_destination_stop_code, journey_destination_stop_code)    as journey_destination_stop_code,
     COALESCE(final_origin_stop_code, origin_stop_code)                              as origin_stop_code,
     COALESCE(final_destination_stop_code, destination_stop_code)                    as destination_stop_code
-FROM updated_view;
+FROM updated_view
 
 select 
     "Id"                                                                        as id,
