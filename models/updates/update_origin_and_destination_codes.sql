@@ -1,5 +1,5 @@
 {{ config(
-    materialized = 'ephemeral'
+    materialized = 'table'  -- O 'ephemeral' o cualquier materialización adecuada
 ) }}
 
 -- Llamar a la macro de actualización
