@@ -25,4 +25,4 @@ select
     COALESCE("Credit_Transactional_Fee", '')                                                        as credit_transactional_fee,
     COALESCE("Credit_Promotional_Fee", '')                                                          as credit_promotional_fee,
     COALESCE("Credit_Term", '')                                                                     as credit_term
-from paypal.settlement
+from paypal_settlement
