@@ -18,7 +18,7 @@ select
     COALESCE(CAST("Fee_Amount" as double precision), 0)                                             as fee_amount,
     COALESCE("Fee_Currency", '')                                                                    as fee_currency,
     COALESCE("Custom_Field", '')                                                                    as custom_field,
-    COALESCE("Consumer_ID", '')                                                                     as consumer_id,
+    COALESCE("Consumer_ID", '')                                                                     as custumer_id,
     COALESCE("Payment_Tracking_ID", '')                                                             as payment_tracking_id,
     COALESCE("Store_ID", '')                                                                        as store_id,
     COALESCE(CAST("Bank_Reference_ID" as double precision), 0)                                      as bank_reference_id,
