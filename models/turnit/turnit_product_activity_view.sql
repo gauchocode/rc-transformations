@@ -72,7 +72,6 @@ select
     COALESCE("TravelPassNumber", '')                                            as travel_pass_number,
     "DepartureDateTime"                                                         as departure_datetime,
     "OperationDateTime" AT TIME ZONE 'UTC'AT TIME ZONE 'America/New_York'       as operation_datetime,
-    "OperationDateTime"                                                         as operation_datetime_orig,
     "Price_without_VAT"                                                         as price_without_vat,
     "SalesReportNumber"                                                         as sales_report_number,
     replace("TransactionStatus", 'TRANSACTION_STATUS.', '')                     as transaction_status,

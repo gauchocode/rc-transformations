@@ -1,28 +1,28 @@
 {{ config(materialized="table" ) }}
 
 select 
-    'SB'                                                                                                            as ch,
-    transaction_id                                                                                                  as transaction_id,
-    COALESCE(transaction_info->>'invoice_id', '')                                                                   as invoice_id,
-    COALESCE(transaction_info->>'paypal_reference_id', '')                                                          as paypal_reference_id,
-    COALESCE(transaction_info->>'paypal_reference_id_type', '')                                                     as paypal_reference_id_type,
-    REPLACE(CAST(transaction_info->'transaction_event_code' as TEXT), '"', '')                                      as transaction_event_code,
-    to_timestamp(transaction_info->>'transaction_initiation_date', 'YYYY-MM-DD"T"HH24:MI:SS')                       as transaction_initiation_date,
-    to_timestamp(transaction_info->>'transaction_initiation_date', 'YYYY-MM-DD"T"HH24:MI:SS') AT TIME ZONE 'UTC'    as transaction_initiation_date_utc,
-    to_timestamp(transaction_info->>'transaction_updated_date', 'YYYY-MM-DD"T"HH24:MI:SS')                          as transaction_completion_date,
-    to_timestamp(transaction_info->>'transaction_updated_date', 'YYYY-MM-DD"T"HH24:MI:SS') AT TIME ZONE 'UTC'       as transaction_completion_date_utc,
-    ''                                                                                                              as transaction_debit_or_credit,
-    ABS(COALESCE(CAST(transaction_info->'transaction_amount'->>'value' as FLOAT), 0))                               as gross_transaction_amount,
-    COALESCE(transaction_info->'transaction_amount'->>'currency_code', '')                                          as gross_transaction_currency,
-    ABS(COALESCE(CAST(transaction_info->'fee_debit_or_credit'->>'value' as FLOAT), 0))                              as fee_debit_or_credit,
-    ABS(COALESCE(CAST(transaction_info->'fee_amount'->>'value' as FLOAT), 0))                                       as fee_amount,
-    COALESCE(transaction_info->'fee_amount'->>'currency_code', '')                                                  as fee_currency,
-    COALESCE(TRIM(BOTH '"' FROM transaction_info->>'custom_field'), '')                                             as custom_field,
-    COALESCE(TRIM(BOTH '"' FROM transaction_info->>'paypal_account_id'), '')                                        as customer_id,
-    ''                                                                                                              as payment_tracking_id,
-    ''                                                                                                              as store_id,
-    ''                                                                                                              as bank_reference_id,
-    ''                                                                                                              as credit_transactional_fee,
-    ''                                                                                                              as credit_promotional_fee,
-    ''                                                                                                              as credit_term
-from paypal.pp_transactions
+    CH                                                                                          as ch
+    Transaction_ID                                                                              as transaction_id
+    COALESCE("Invoice_ID", '')                                                                  as invoice_id
+    COALESCE("PayPal_Reference_ID", '')                                                         as paypal_reference_id
+    COALESCE("PayPal_Reference_ID_Type", '')                                                    as paypal_reference_id_type
+    COALESCE("Transaction_Event_Code", '')                                                      as transaction_event_code
+    Transaction_Initiation_Date                                                                 as transaction_initiation_date
+    to_timestamp(Transaction_Initiation_Date, 'YYYY-MM-DD"T"HH24:MI:SS') AT TIME ZONE 'UTC'     as transaction_initiation_date_utc
+    Transaction_Completion_Date                                                                 as transaction_completion_date
+    to_timestamp(Transaction_Completion_Date, 'YYYY-MM-DD"T"HH24:MI:SS') AT TIME ZONE 'UTC'     as transaction_completion_date_utc
+    COALESCE("Transaction_Debit_or_Credit", '')                                                 as transaction_debit_or_credit
+    Gross_Transaction_Amount                                                                    as gross_transaction_amount
+    Gross_Transaction_Currency                                                                  as gross_transaction_currency
+    Fee_Debit_or_Credit                                                                         as fee_debit_or_credit
+    COALESCE("Fee_Amount", 0)                                                                   as fee_amount
+    COALESCE("Fee_Currency", '')                                                                as fee_currency
+    COALESCE("Custom_Field", '')                                                                as custom_field
+    COALESCE("Consumer_ID", '')                                                                 as consumer_id
+    COALESCE("Payment_Tracking_ID", '')                                                         as payment_tracking_id
+    COALESCE("Store_ID", '')                                                                    as store_id
+    COALESCE("Bank_Reference_ID", 0)                                                            as bank_reference_id
+    COALESCE("Credit_Transactional_Fee", '')                                                    as credit_transactional_fee
+    COALESCE("Credit_Promotional_Fee", '')                                                      as credit_promotional_fee
+    COALESCE("Credit_Term", '')                                                                 as credit_term
+from paypal.settlement
