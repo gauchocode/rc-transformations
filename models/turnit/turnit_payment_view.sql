@@ -29,7 +29,6 @@ select
     "PaymentBankInfo"                   as payment_bank_info,
     "PaymentCurrency"                   as payment_currency,
     "PaymentDateTime" AT TIME ZONE 'UTC' AT TIME ZONE 'America/New_York' as payment_datetime,
-    "PaymentDateTime"                   as payment_datetime_orig
     COALESCE("PaymentProvider", '')     as payment_provider,
     "PaymentContactId"                  as payment_contact_id,
     "PaymentCreatedBy"                  as payment_created_by,
