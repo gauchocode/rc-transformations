@@ -53,7 +53,7 @@ select
     COALESCE("OperationGroup", 0)                                               as operation_group,
     COALESCE(
         regexp_replace(
-            regexp_replace("OriginStopCode", 'UCL', 'UFL'),
+            regexp_replace("OriginStopCode", 'UCL', 'UCF'),
             'FMP', 'FM'
         ),
         ''
@@ -81,7 +81,7 @@ select
     COALESCE("RelatedProductCode", '')                                          as related_product_code,
     COALESCE(
         regexp_replace(
-            regexp_replace("DestinationStopCode", 'UCL', 'UFL'),
+            regexp_replace("DestinationStopCode", 'UCL', 'UCF'),
             'FMP', 'FM'
         ),
         ''
@@ -89,7 +89,7 @@ select
     "IsInboundJourneyWay"                                                       as is_inbound_journey_way,
     COALESCE(
         regexp_replace(
-            regexp_replace("JourneyOriginStopCode", 'UCL', 'UFL'),
+            regexp_replace("JourneyOriginStopCode", 'UCL', 'UCF'),
             'FMP', 'FM'
         ),
         ''
@@ -101,7 +101,7 @@ select
     COALESCE("RelatedTravelPassNumber", '')                                     as related_travel_pass_number,
     COALESCE(
         regexp_replace(
-            regexp_replace("JourneyDestinationStopCode", 'UCL', 'UFL'),
+            regexp_replace("JourneyDestinationStopCode", 'UCL', 'UCF'),
             'FMP', 'FM'
         ),
         ''
