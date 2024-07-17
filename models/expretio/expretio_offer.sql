@@ -12,7 +12,7 @@ select
     "CABIN"                     as cabin,
     "TYPE"                      as type,
     "BASE"                      as base,
-    COALESCE("TAXES", '')       as taxes,
+    COALESCE("TAXES", 0)       as taxes,
     "FARE"                      as fare,
     "FEE"                       as fee,
     "CURRENCY"                  as currency,
