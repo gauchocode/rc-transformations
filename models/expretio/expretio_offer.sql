@@ -6,7 +6,6 @@ select
     "CXR"                       as cxr,
     "DDATE"                     as ddate,
     "DTIME"                     as dtime,
-    "ATIME"                     as atime,
     "DDURATION"                 as dduration,
     "DSTP"                      as dstp,
     "DFLIGHT"                   as dflight,
