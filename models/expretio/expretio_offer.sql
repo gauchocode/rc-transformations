@@ -21,4 +21,4 @@ select
     "NBR_PAX"                   as nbx_pax,
     "RQTDATE"                   as rqtdate,
     "STATION"                   as station
-from public.expretio_offer
+from expretio.expretio_offer
