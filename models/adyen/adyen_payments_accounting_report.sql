@@ -35,4 +35,4 @@ select
     COALESCE("reserved8", '')                       as reserved8,
     COALESCE("reserved9", '')                       as reserved9,
     COALESCE("reserved10", '')                      as reserved10
-from adyen.adyen_payments_accounting_report
+from public.adyen_payments_accounting_report

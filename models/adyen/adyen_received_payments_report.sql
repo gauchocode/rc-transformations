@@ -53,4 +53,4 @@ select
     'reserved10'                                        as reserved10
 
 
-from adyen.adyen_received_payments_report
+from public.adyen_received_payments_report
