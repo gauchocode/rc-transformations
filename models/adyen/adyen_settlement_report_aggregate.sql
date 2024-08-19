@@ -14,7 +14,7 @@ select
     COALESCE("timezone", '')                    as timezone,
     COALESCE("journal_type", '')                as journal_type,
     COALESCE("gross_currency", '')              as gross_currency,
-    COALESCE("gross_debit_gc", 0)               as gross_debit_gc,
+    COALESCE(CAST("gross_debit_gc" AS numeric(39,9)), 0)               as gross_debit_gc,
     COALESCE("gross_credit_gc", 0)              as gross_credit_gc,
     COALESCE("exchange_rate", 0)                as exchange_rate,
     COALESCE("net_currency", '')                as net_currency,
