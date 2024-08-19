@@ -18,9 +18,9 @@ select
     COALESCE(CAST("gross_credit_gc" AS numeric(39,9)), 0)              as gross_credit_gc,
     COALESCE("exchange_rate", 0)                as exchange_rate,
     COALESCE("net_currency", '')                as net_currency,
-    COALESCE("net_debit_nc", 0)                 as net_debit_nc,
-    COALESCE("net_credit_nc", 0)                as net_credit_nc,
-    COALESCE("bank_card_commission_nc", 0)      as bank_card_commission_nc,
+    COALESCE(CAST("net_debit_nc" AS numeric(39,9)), 0)                 as net_debit_nc,
+    COALESCE(CAST("net_credit_nc" AS numeric(39,9)), 0)                as net_credit_nc,
+    COALESCE(CAST("bank_card_commission_nc" AS numeric(39,9)), 0)      as bank_card_commission_nc,
     COALESCE("dcc_markup_nc", '')               as dcc_markup_nc,
     COALESCE("num_txs", 0)                      as num_txs
 from public.adyen_settlement_report_aggregate
