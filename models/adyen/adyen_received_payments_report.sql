@@ -22,7 +22,7 @@ select
     COALESCE("issuer_city", '')                         as issuer_city,
     COALESCE("issuer_country", '')                      as issuer_country,
     COALESCE("acquirer_response", '')                   as acquirer_response,
-    COALESCE(CAST("authorisation_code" as  numeric(39,9)), 0)                   as authorisation_code,
+    COALESCE("authorisation_code", "")                  as authorisation_code,
     COALESCE("shopper_email", '')                       as shopper_email,
     COALESCE("shopper_reference", '')                   as shopper_reference,
     COALESCE("3d_directory_response", '')               as "3d_directory_response",
