@@ -1,4 +1,5 @@
--- models/my_model.sql
+{{ config(materialized="table" ) }}
+
 SELECT 
     ''                                                                          as saleforce_id,
     id                                                                          as id,
