@@ -5,7 +5,11 @@
 
 WITH source_data AS (
     SELECT 
-        COALESCE(salesforce_id, '')                  as saleforce_id,
+        {% if 'salesforce_id' in dbt_utils.get_column_names(source('bookings', 'booking')) %}
+            COALESCE(salesforce_id, '') as salesforce_id,
+        {% else %}
+            '' as salesforce_id,
+        {% endif %}
         id                                           as id,
         reference                                    as reference,
         changed_on_utc                               as changed_on_utc,
