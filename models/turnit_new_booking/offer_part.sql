@@ -32,7 +32,7 @@ WITH source_data AS (
         promotional_discount_name                       as promotional_discount_name,
         passenger_type_discount_name                    as passenger_type_discount_name,
         admission_booked_with_travel_pass_id            as admission_booked_with_travel_pass_id,
-        unit_price_with_passenger_type_discount         as unit_price_with_passenger_type_discount,
+        unit_price_with_passenger_type_discount         as unit_price_with_passenger_type_discount
     FROM {{ source('public', 'offer_part') }}
 )
 
