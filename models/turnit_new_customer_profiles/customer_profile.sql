@@ -25,7 +25,7 @@ WITH source_data AS (
         row_updated_on_utc                              as row_updated_on_utc,
         left_loyalty_on_utc                             as left_loyalty_on_utc,
         joined_loyalty_on_utc                           as joined_loyalty_on_utc
-    FROM {{ source('public', 'customer_profiles') }}
+    FROM {{ source('public', 'customer_profile') }}
 )
 
 SELECT *
