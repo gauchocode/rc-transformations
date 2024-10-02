@@ -21,7 +21,7 @@ WITH source_data AS (
         actual_departure_time                           as actual_departure_time,
         distance_from_previous                          as distance_from_previous,
         planned_departure_time                          as planned_departure_time
-    FROM {{ source('public', 'trip') }}
+    FROM {{ source('public', 'trip_route') }}
 )
 
 SELECT *
