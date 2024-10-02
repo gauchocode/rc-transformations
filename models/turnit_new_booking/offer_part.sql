@@ -14,7 +14,7 @@ WITH source_data AS (
         unit_price                                      as unit_price,
         final_price                                     as final_price,
         campaign_code                                   as campaign_code,
-        campaign_name                                   as campaign_name
+        campaign_name                                   as campaign_name,
         changed_on_utc                                  as changed_on_utc,
         created_on_utc                                  as created_on_utc,
         tax_percentage                                  as tax_percentage,
