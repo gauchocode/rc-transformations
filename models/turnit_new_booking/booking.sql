@@ -8,7 +8,8 @@ WITH source_data AS (
         changed_on_utc                               as changed_on_utc,
         changed_on_utc                               as created_on_utc,
         changed_by_user_id                           as changed_by_user_id,
-        created_by_user_id                           as row_updated_on_utc
+        created_by_user_id                           as created_by_user_id,
+        row_updated_on_utc                           as row_updated_on_utc
     FROM {{ source('public', 'booking') }}
 )
 
