@@ -4,3 +4,5 @@ sources:
   - name: public 
     tables:
       - name: booking
+      - name: offer_part
+      - name: payment
