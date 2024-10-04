@@ -57,35 +57,31 @@ with
 
 	checkin as (
 		select transaction_code, checkin_stop_id
-		from public.turnit_checkin)		
+		from public.turnit_checkin),
+
+	trip as (
+		select trip_id, trip_departure_datetime 
+		from turnit_trip)
 
 SELECT p.id, p.operation_datetime, p.basket_code, p.operation_group, 
 p.product_code, p.transaction_code, p.related_product_code, p.transaction_status, p.type, p.code, p.operation, 
-p.pax_category, p.pax_first_name, p.pax_last_name, 
-
-coalesce(o.name, '') as journey_origin_stop_code,
-coalesce(d.name, '') as journey_destination_stop_code,
-
+p.pax_category, INITCAP(p.pax_first_name) as pax_first_name, INITCAP(p.pax_last_name) as pax_last_name, LOWER(p.pax_email) as pax_email,
+coalesce(o.name, p.journey_origin_stop_code) as journey_origin_stop_code,
+coalesce(d.name, p.journey_destination_stop_code) as journey_destination_stop_code,
 p.operation_user, p.operation_sales_point_type,
-p.price, p.distance, t.company, p.departure_datetime,
-
+p.price, p.distance, 
+p.departure_datetime as departure_datetime, 
+coalesce(trip.trip_departure_datetime, p.departure_datetime) as trip_departure_datetime, 
+coalesce(substr(t.company, 10, 8), 'Others') as company,
 coalesce(pav_fee_pc.price, 0) as fee_nivel_tk,
 coalesce(pav_fee_bc.price, 0) as fee_nivel_bk,
 coalesce(pav_bus_pc.cant_nivel_tk, 0) as cant_nivel_tk,
 coalesce(pav_bus_bc.cant_nivel_bk, 0) as cant_nivel_bk,
 coalesce(pv_voucher.pv_voucher, 0) as pv_voucher,
 coalesce(pv_dinero.pv_dinero, 0) as pv_dinero,
-
 coalesce(tu.new_trip_id, p.trip_id) as trip_id,
-
-p.trip_id as trip_id_orig,
-
-pax_email, travel_account_id,
-
+p.trip_id as trip_id_orig, travel_account_id,
 coalesce(checkin.checkin_stop_id, 0) as checkin_stop
---,COALESCE((select checkin_stop_id from public.turnit_checkin 
---where transaction_code = p.transaction_code ), 0) as checkin_stop
-
 ,CASE p.operation_user
 	WHEN 'redcoach.webstore' THEN 'Web'
 	WHEN 'busbud.webstore' THEN 'Busbud'
@@ -97,15 +93,13 @@ coalesce(checkin.checkin_stop_id, 0) as checkin_stop
 		        ELSE 'Driver'
 		        END
 	END AS _canal_venta, p.primary_seat
-
 , CONCAT(p.journey_origin_stop_code,' - ', p.journey_destination_stop_code) as od,
-
-p.journey_origin_stop_code as origen, p.journey_destination_stop_code as destino
-
-,coalesce(r.company, '') as company_sc,
-
-r.ruta_nivel_1, coalesce(tra.tramo, 'Sin Tramo') as tramo
-
+p.journey_origin_stop_code as origen, p.journey_destination_stop_code as destino,
+coalesce(r.company, '') as company_sc,
+coalesce(r.ruta_nivel_1, 'Sin ruta') as ruta_nivel_1,
+coalesce(r.ruta_nivel_4, 'Sin ruta') as ruta_nivel_4, t.trip_service_code,
+coalesce(tra.tramo, 'Sin Tramo') as tramo,
+CONCAT(o.platform_name,' - ',d.platform_name) as od_platform
 FROM public.turnit_product_activity_view p
 left join public.turnit_trip t on p.trip_id = t.trip_id
 left join pav_fee_pc on pav_fee_pc.related_product_code = p.product_code
@@ -120,5 +114,5 @@ left join public.turnit_bus_stop o on o.code = p.journey_origin_stop_code
 left join public.turnit_bus_stop d on d.code = p.journey_destination_stop_code
 left join checkin on checkin.transaction_code = p.transaction_code 
 left join maestros_ma_tramos tra on tra.od = CONCAT(p.journey_origin_stop_code,' - ', p.journey_destination_stop_code)
-
+left join trip on trip.trip_id = coalesce(tu.new_trip_id, p.trip_id)
 where p.type = 'BUS_TICKET' and p.transaction_code in (select transaction_code from ticket_activos)
